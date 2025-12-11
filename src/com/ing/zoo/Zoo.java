@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Zoo {
     private final List<Animal> animals = new ArrayList<>();
 
+    /** Initializes the zoo with animals */
     public Zoo() {
         animals.add(new Lion("Henk, the lion"));
         animals.add(new Hippo("Elsa, the hippo"));
@@ -27,7 +28,7 @@ public class Zoo {
     }
 
     /**
-     * Main loop
+     * Main loop to read user input and execute commands
      */
     public void run() {
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +39,9 @@ public class Zoo {
     }
 
     /**
-     * Determines which command to run
+     * Determines which command to execute based on user input
+     *
+     * @param input user command
      */
     private void handleCommand(String input) {
         if (input.startsWith("hello")) {
@@ -46,7 +49,7 @@ public class Zoo {
         } else if (input.startsWith("give")) {
             handleGive(input);
         } else if (input.startsWith("perform trick")) {
-            handlePerform(input);
+            handlePerform();
         } else {
             System.out.println("Unknown command: " + input);
         }
@@ -54,6 +57,11 @@ public class Zoo {
 
     // --------------- Hello Command ---------------
 
+    /**
+     * Handles the 'hello' command
+     *
+     * @param input full user input
+     */
     private void handleHello(String input) {
         String[] parts = input.split(" ");
         if (parts.length == 1) {
@@ -65,10 +73,16 @@ public class Zoo {
         }
     }
 
+    /** Make all animals say hello */
     private void sayHelloToAll() {
         animals.forEach(Animal::sayHello);
     }
 
+    /**
+     * Make a single animal say hello
+     *
+     * @param name the name of the animal
+     */
     private void sayHelloTo(String name) {
         Animal animal = animals.stream()
                 .filter(a -> a.getName().equals(name))
@@ -84,6 +98,11 @@ public class Zoo {
 
     // ----------------- Eat Command -----------------
 
+    /**
+     * Handles the 'give' command
+     *
+     * @param input full user input
+     */
     private void handleGive(String input) {
         if (input.contains("leaves")) {
             giveLeaves();
@@ -94,6 +113,7 @@ public class Zoo {
         }
     }
 
+    /** Give leaves to all herbivores */
     private void giveLeaves() {
         animals.stream()
                 .filter(a -> a instanceof Herbivore)
@@ -101,6 +121,7 @@ public class Zoo {
                 .forEach(Herbivore::eatLeaves);
     }
 
+    /** Give meat to all carnivores */
     private void giveMeat() {
         animals.stream()
                 .filter(a -> a instanceof Carnivore)
@@ -110,10 +131,15 @@ public class Zoo {
 
     // ---------------- Perform Command ---------------
 
-    private void handlePerform(String input) {
+    /**
+     * Handles the 'perform trick' command
+     *
+     */
+    private void handlePerform() {
         performTricks();
     }
 
+    /** Make all animals that can perform tricks do so */
     private void performTricks() {
         animals.stream()
                 .filter(a -> a instanceof TrickPerformer)

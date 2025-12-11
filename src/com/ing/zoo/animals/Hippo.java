@@ -10,11 +10,11 @@ public class Hippo extends Animal implements Herbivore {
 
     @Override
     protected String getHelloText() {
-        return "splash";
+        return "*splash*";
     }
 
     @Override
     public String getLeavesText() {
-        return "munch munch lovely";
+        return "'munch munch lovely'";
     }
 }

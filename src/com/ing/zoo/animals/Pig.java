@@ -20,25 +20,25 @@ public class Pig extends Animal implements Herbivore, Carnivore, TrickPerformer 
         String trick;
 
         if (rnd == 0) {
-            trick = "rolls in the mud";
+            trick = "*rolls in the mud*";
         } else {
-            trick = "runs in circles";
+            trick = "*runs in circles*";
         }
         return trick;
     }
 
     @Override
     protected String getHelloText() {
-        return "splash";
+        return "*splash*";
     }
 
     @Override
     public String getLeavesText() {
-        return "munch munch oink";
+        return "'munch munch oink'";
     }
 
     @Override
     public String getMeatText() {
-        return "nomnomnom oink thx";
+        return "'nomnomnom oink thx'";
     }
 }

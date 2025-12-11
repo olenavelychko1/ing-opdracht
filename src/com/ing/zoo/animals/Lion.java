@@ -10,11 +10,11 @@ public class Lion extends Animal implements Carnivore {
 
     @Override
     protected String getHelloText() {
-        return "roooaoaaaaar";
+        return "'roooaoaaaaar'";
     }
 
     @Override
     public String getMeatText() {
-        return "nomnomnom thx mate";
+        return "'nomnomnom thx mate'";
     }
 }

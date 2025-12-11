@@ -15,11 +15,11 @@ public class Zoo {
 
     /** Initializes the zoo with animals */
     public Zoo() {
-        animals.add(new Lion("Henk, the lion"));
-        animals.add(new Hippo("Elsa, the hippo"));
-        animals.add(new Pig("Dora, the pig"));
-        animals.add(new Tiger("Wally, the tiger"));
-        animals.add(new Zebra("Marty, the zebra"));
+        animals.add(new Lion("Henk"));
+        animals.add(new Hippo("Elsa"));
+        animals.add(new Pig("Dora"));
+        animals.add(new Tiger("Wally"));
+        animals.add(new Zebra("Marty"));
     }
 
     public static void main(String[] args) {
@@ -85,7 +85,7 @@ public class Zoo {
      */
     private void sayHelloTo(String name) {
         Animal animal = animals.stream()
-                .filter(a -> a.getName().equals(name))
+                .filter(a -> a.getName().equalsIgnoreCase(name))
                 .findFirst()
                 .orElse(null);
 

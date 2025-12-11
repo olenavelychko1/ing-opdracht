@@ -19,20 +19,20 @@ public class Tiger extends Animal implements Carnivore, TrickPerformer {
         String trick;
 
         if (rnd == 0) {
-            trick = "jumps in tree";
+            trick = "*jumps in tree*";
         } else {
-            trick = "scratches ears";
+            trick = "*scratches ears*";
         }
         return trick;
     }
 
     @Override
     protected String getHelloText() {
-        return "rraaarww";
+        return "'rraaarww'";
     }
 
     @Override
     public String getMeatText() {
-        return "nomnomnom wubalubadubdub";
+        return "'nomnomnom wubalubadubdub'";
     }
 }

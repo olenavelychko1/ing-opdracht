@@ -13,12 +13,12 @@ public class Zebra extends Animal implements Herbivore, TrickPerformer {
 
     @Override
     protected String getHelloText() {
-        return "zebra zebra";
+        return "'zebra zebra'";
     }
 
     @Override
     public String getLeavesText() {
-        return "munch munch zank yee bra";
+        return "'munch munch zank yee bra'";
     }
 
     @Override
@@ -30,9 +30,9 @@ public class Zebra extends Animal implements Herbivore, TrickPerformer {
         String trick;
 
         if (rnd == 0) {
-            trick = "stands on its hind legs";
+            trick = "*stands on its hind legs*";
         } else {
-            trick = "...... zebraaaa";
+            trick = "'...... zebraaaa'";
         }
         return trick;
     }

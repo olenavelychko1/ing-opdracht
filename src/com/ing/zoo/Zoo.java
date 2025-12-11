@@ -21,6 +21,7 @@ public class Zoo {
         animals.add(new Tiger("Wally"));
         animals.add(new Zebra("Marty"));
         animals.add(new Parrot("Polly"));
+        animals.add(new Monkey("Bert"));
     }
 
     public static void main(String[] args) {

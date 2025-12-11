@@ -1,47 +1,44 @@
 package com.ing.zoo.animals;
 
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.behaviours.Carnivore;
+import com.ing.zoo.behaviours.Herbivore;
+import com.ing.zoo.behaviours.TrickPerformer;
+
 import java.util.Random;
 
-public class Pig {
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
-
-    public Pig()
-    {
+public class Pig extends Animal implements Herbivore, Carnivore, TrickPerformer {
+    public Pig(String name) {
+        super(name);
     }
 
-    public void sayHello()
-    {
-        helloText = "splash";
-        System.out.println(helloText);
-    }
-
-    public void eatLeaves()
-    {
-        eatText = "munch munch oink";
-        System.out.println(eatText);
-    }
-
-    public void eatMeat()
-    {
-        eatText = "nomnomnom oink thx";
-        System.out.println(eatText);
-    }
-
-    public void performTrick()
-    {
+    public String getTrickText() {
+        // make a random number from 0 to 1
         Random random = new Random();
         int rnd = random.nextInt(2);
-        if(rnd == 0)
-        {
+
+        String trick;
+
+        if (rnd == 0) {
             trick = "rolls in the mud";
-        }
-        else
-        {
+        } else {
             trick = "runs in circles";
         }
-        System.out.println(trick);
+        return trick;
+    }
+
+    @Override
+    protected String getHelloText() {
+        return "splash";
+    }
+
+    @Override
+    public String getLeavesText() {
+        return "munch munch oink";
+    }
+
+    @Override
+    public String getMeatText() {
+        return "nomnomnom oink thx";
     }
 }

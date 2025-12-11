@@ -1,24 +1,39 @@
 package com.ing.zoo.animals;
 
-public class Zebra {
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
+import com.ing.zoo.base.Animal;
+import com.ing.zoo.behaviours.Herbivore;
+import com.ing.zoo.behaviours.TrickPerformer;
 
-    public Zebra()
-    {
+import java.util.Random;
+
+public class Zebra extends Animal implements Herbivore, TrickPerformer {
+    public Zebra(String name) {
+        super(name);
     }
 
-    public void sayHello()
-    {
-        helloText = "zebra zebra";
-        System.out.println(helloText);
+    @Override
+    protected String getHelloText() {
+        return "zebra zebra";
     }
 
-    public void eatLeaves()
-    {
-        eatText = "munch munch zank yee bra";
-        System.out.println(eatText);
+    @Override
+    public String getLeavesText() {
+        return "munch munch zank yee bra";
+    }
+
+    @Override
+    public String getTrickText() {
+        // make a random number from 0 to 1
+        Random random = new Random();
+        int rnd = random.nextInt(2);
+
+        String trick;
+
+        if (rnd == 0) {
+            trick = "stands on its hind legs";
+        } else {
+            trick = "...... zebraaaa";
+        }
+        return trick;
     }
 }

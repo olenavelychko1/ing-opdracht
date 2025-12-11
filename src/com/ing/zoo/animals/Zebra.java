@@ -1,23 +1,24 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
-public class Hippo {
+public class Zebra {
     public String name;
     public String helloText;
     public String eatText;
+    public String trick;
 
-    public Hippo()
+    public Zebra()
     {
     }
 
     public void sayHello()
     {
-        helloText = "splash";
+        helloText = "zebra zebra";
         System.out.println(helloText);
     }
 
     public void eatLeaves()
     {
-        eatText = "munch munch lovely";
+        eatText = "munch munch zank yee bra";
         System.out.println(eatText);
     }
 }

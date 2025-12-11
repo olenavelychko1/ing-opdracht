@@ -12,7 +12,7 @@ public class Zebra extends Animal implements Herbivore, TrickPerformer {
     }
 
     @Override
-    protected String getHelloText() {
+    public String getHelloText() {
         return "'zebra zebra'";
     }
 

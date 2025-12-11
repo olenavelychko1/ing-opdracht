@@ -2,7 +2,7 @@ package com.ing.zoo.base;
 
 public abstract class Animal {
     private String name;
-    protected abstract String getHelloText();
+    public abstract String getHelloText();
 
     public Animal(String name) {
         this.name = name;

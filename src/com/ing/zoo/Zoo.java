@@ -20,6 +20,7 @@ public class Zoo {
         animals.add(new Pig("Dora"));
         animals.add(new Tiger("Wally"));
         animals.add(new Zebra("Marty"));
+        animals.add(new Parrot("Polly"));
     }
 
     public static void main(String[] args) {

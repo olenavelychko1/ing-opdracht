@@ -12,6 +12,7 @@ public class Pig extends Animal implements Herbivore, Carnivore, TrickPerformer 
         super(name);
     }
 
+    @Override
     public String getTrickText() {
         // make a random number from 0 to 1
         Random random = new Random();
@@ -28,7 +29,7 @@ public class Pig extends Animal implements Herbivore, Carnivore, TrickPerformer 
     }
 
     @Override
-    protected String getHelloText() {
+    public String getHelloText() {
         return "*splash*";
     }
 

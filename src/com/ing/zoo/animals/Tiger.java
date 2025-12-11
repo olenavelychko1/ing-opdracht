@@ -11,6 +11,7 @@ public class Tiger extends Animal implements Carnivore, TrickPerformer {
         super(name);
     }
 
+    @Override
     public String getTrickText() {
         // make a random number from 0 to 1
         Random random = new Random();
@@ -27,7 +28,7 @@ public class Tiger extends Animal implements Carnivore, TrickPerformer {
     }
 
     @Override
-    protected String getHelloText() {
+    public String getHelloText() {
         return "'rraaarww'";
     }
 

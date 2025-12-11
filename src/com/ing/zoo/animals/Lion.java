@@ -9,7 +9,7 @@ public class Lion extends Animal implements Carnivore {
     }
 
     @Override
-    protected String getHelloText() {
+    public String getHelloText() {
         return "'roooaoaaaaar'";
     }
 

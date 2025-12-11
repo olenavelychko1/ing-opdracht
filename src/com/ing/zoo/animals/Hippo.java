@@ -9,7 +9,7 @@ public class Hippo extends Animal implements Herbivore {
     }
 
     @Override
-    protected String getHelloText() {
+    public String getHelloText() {
         return "*splash*";
     }
 
